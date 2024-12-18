@@ -25,7 +25,7 @@ def create_user_in_base(data:Usercreateshcema,db:Session):
     db.commit()
     db.refresh(new_user)
 
-    return {"msg":"user is created"}
+    return {"Message":"user is created"}
 
 def delete_user_in_base(data:Userdeletescheme,db:Session,current_user = Depends(get_current_user)):
     this_user = db.query(User).filter_by(username = current_user['username']).first()
@@ -43,4 +43,4 @@ def delete_user_in_base(data:Userdeletescheme,db:Session,current_user = Depends(
     db.query(User).filter_by(username=data.username).update({"is_deleted": True})
     db.commit()
 
-    return {"msg":"user is deleted"}
+    return {"Message":"user is deleted"}

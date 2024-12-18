@@ -17,6 +17,5 @@ class LessonRegistrSchema(BaseModel):
 
 class LessonDeleteSchema(BaseModel):
     course_id:int
-    
     class Config:
         extra = "forbid"

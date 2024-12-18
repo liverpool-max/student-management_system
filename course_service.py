@@ -4,7 +4,7 @@ from jwt import get_current_user
 from sqlalchemy.orm import Session
 from exceptions import *
 from course_schema import *
-from datetime import date
+
 
 
 
@@ -42,7 +42,7 @@ def create_course_in_base(db:Session, data:LessonCreateSchema, current_user = De
 
     if not check_user_role:
         raise UserNottFoundException
-
+    
     if check_user_role.role == "admin":
         raise Unauthorized
     
@@ -58,7 +58,7 @@ def create_course_in_base(db:Session, data:LessonCreateSchema, current_user = De
     db.commit()
     db.refresh(new_course)
 
-    return {"msg":"course is created"}
+    return {"Message":"course is created"}
     
 
 
@@ -93,7 +93,7 @@ def create_registr_course(db:Session,data:LessonRegistrSchema,current_user = Dep
     db.commit()
     db.refresh(new_user)
 
-    return {"msg":"student is added into course"}
+    return {"Message":"student is added into course"}
 
 
 
@@ -116,7 +116,7 @@ def delete_course_by_id(db:Session,data:LessonDeleteSchema,current_user = Depend
     db.query(Course).filter_by(id = data.course_id).update({"is_deleted":True})
     db.commit()
 
-    return {"msg":"lesson is deleted"}
+    return {"Message":"lesson is deleted"}
 
     
     

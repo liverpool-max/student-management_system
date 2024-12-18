@@ -65,7 +65,7 @@ def create_student_in_base(db:Session,data:Studentcreateshcema,current_user = De
     db.add(new_student)
     db.commit()
     db.refresh(new_student)
-    return {"msg":"student is created"}
+    return {"Message":"student is created"}
 
 def delete_student_by_id(db:Session,data:Studentdeletescheme,current_user = Depends(get_current_user)):
     
@@ -82,6 +82,6 @@ def delete_student_by_id(db:Session,data:Studentdeletescheme,current_user = Depe
     else:
         raise UserNottFoundException
     
-    return {"msg":"user is deleted"}
+    return {"Message":"user is deleted"}
     
 

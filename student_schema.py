@@ -7,9 +7,9 @@ class Studentcreateshcema(BaseModel):
     fin_code:str
     birth_date:date
     class Config:
-        extra="forbid"
+        extra = "forbid"
 
 class Studentdeletescheme(BaseModel):
     id:int
     class Config:
-        extra="forbid"
+        extra = "forbid"

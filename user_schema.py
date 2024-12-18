@@ -5,9 +5,9 @@ class Usercreateshcema(BaseModel):
     password:str
     role:str
     class Config:
-        extra="forbid"
+        extra = "forbid"
 
 class Userdeletescheme(BaseModel):
     username:str
     class Config:
-        extra="forbid"
+        extra = "forbid"
