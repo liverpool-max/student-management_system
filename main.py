@@ -5,7 +5,7 @@ from students import student_router
 from course import course_router
 from grade import grade_router
 
-app = FastAPI()
+app = FastAPI(title="Student Management System", description="This app for lecturer and students and registration course", version="0.0.1")
 
 app.include_router(authentication_router)
 app.include_router(user_router)
